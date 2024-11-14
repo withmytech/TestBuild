@@ -41,11 +41,11 @@ function playGame(userSelection) {
   const computerSelection = getComputerChoice();
 
   updateImage("userChoice", userSelection, "gif");
-  updateImage("computerChoice", userSelection, "gif"); // Mirror player's choice for computer
+  updateImage("computerChoice", computerSelection, "gif"); // Computer has its independent choice
 
   setTimeout(() => {
     updateImage("userChoice", userSelection, "static");
-    updateImage("computerChoice", userSelection, "static"); // Mirror static version
+    updateImage("computerChoice", computerSelection, "static");
   }, 1000);
 
   const result = determineWinner(userSelection, computerSelection);
@@ -78,11 +78,11 @@ function updateImage(elementId, choice, type) {
   const element = document.getElementById(elementId);
   element.src = choices[choice][type];
 
-  // Apply mirroring for the computer choice
+  // Mirror the computer's choice visually
   if (elementId === "computerChoice") {
-    element.style.transform = "scaleX(-1)"; // Mirror horizontally
+    element.style.transform = "scaleX(-1)"; // Flip horizontally
   } else {
-    element.style.transform = "scaleX(1)"; // Reset mirroring for player choice
+    element.style.transform = "scaleX(1)"; // Reset for player's choice
   }
 }
 
