@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Rock, Paper, Scissors</h1>
+  
+  <div class="scoreboard">
+    <div class="scoreboard-header">
+      <svg class="trophy-icon" viewBox="0 0 24 24" width="24" height="24">
+        <path fill="currentColor" d="M12 3L9 3L9 1L15 1L15 3L12 3M19 5L17 5L17 3L20 3L21.1 13.5C21.1 13.5 19.5 17 12 17C4.5 17 2.9 13.5 2.9 13.5L4 3L7 3L7 5L5 5L4.1 12.5C4.1 12.5 5.5 15 12 15C18.5 15 19.9 12.5 19.9 12.5L19 5M7 5L7 8C7 10.8 9.2 13 12 13C14.8 13 17 10.8 17 8L17 5L7 5M12 23L9.5 19L14.5 19L12 23Z"/>
+      </svg>
+      <h2 class="scoreboard-title">Game Status</h2>
+    </div>
+    
+    <div class="scoreboard-content">
+      <div class="winner-announcement" id="winner">Let's Play!</div>
+      
+      <div class="score-display">
+        <div class="score-item">
+          <div class="score-label">Player</div>
+          <div class="score-value player-score">0</div>
+          <div class="points" id="userPoints">Points: 0</div>
+        </div>
+        
+        <div class="score-vs">vs</div>
+        
+        <div class="score-item">
+          <div class="score-label">Computer</div>
+          <div class="score-value computer-score">0</div>
+          <div class="points" id="computerPoints">Points: 0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="game-container">
+      <div class="result-container">
+        <div class="player-container">
+          <h2>You</h2>
+          <img id="userChoice" alt="Your Choice" class="choice-image">
+        </div>
+        <div class="player-container">
+          <h2>Computer</h2>
+          <img id="computerChoice" alt="Computer's Choice" class="choice-image">
+        </div>
+      </div>
+      <div class="choices">
+        <button class="choice" onclick="playGame('rock')">
+          <img src="rockstatic.gif" alt="Rock" class="choice-image">
+        </button>
+        <button class="choice" onclick="playGame('paper')">
+          <img src="paperstatic.gif" alt="Paper" class="choice-image">
+        </button>
+        <button class="choice" onclick="playGame('scissors')">
+          <img src="scissorstatic.gif" alt="Scissors" class="choice-image">
+        </button>
+      </div>
+     
+      <h3 id="result"></h3>
+      <button class="end-game-btn" onclick="endGame()">End Game</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
